@@ -1,6 +1,6 @@
 ![alt text][curl-logo] JavaScript
 ============
-[curl-logo]: https://raw.github.com/www.metlinskyi.com/js/smart.png "Widgets for UI"
+[curl-logo]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/js/smart.png "Widgets for UI"
 Smart js widgets for your sexy UI
 
 Enum
