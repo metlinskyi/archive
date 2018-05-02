@@ -1,0 +1,51 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sms", "sms.vcproj", "{877C2FA2-D149-4C79-B29E-4D0423CBE1F2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jeans", "jeans\jeans.vcproj", "{F758256C-EBC3-42AC-B9ED-7B6063A13141}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kyivstar", "kyivstar\kyivstar.vcproj", "{21EEB15B-AAFF-4BB7-9C24-3EF16C92F708}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "umc", "umc\umc.vcproj", "{26FD8B53-672C-48ED-AAF4-598BF78BE12B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wellcom", "wellcom\wellcom.vcproj", "{B1857F8D-0E41-46FE-B677-8E258D262F81}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "golden", "golden\golden.vcproj", "{F32481B3-4814-4991-8CAF-1A4E9D84371E}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{877C2FA2-D149-4C79-B29E-4D0423CBE1F2}.Debug.ActiveCfg = Debug|Win32
+		{877C2FA2-D149-4C79-B29E-4D0423CBE1F2}.Debug.Build.0 = Debug|Win32
+		{877C2FA2-D149-4C79-B29E-4D0423CBE1F2}.Release.ActiveCfg = Release|Win32
+		{877C2FA2-D149-4C79-B29E-4D0423CBE1F2}.Release.Build.0 = Release|Win32
+		{F758256C-EBC3-42AC-B9ED-7B6063A13141}.Debug.ActiveCfg = Debug|Win32
+		{F758256C-EBC3-42AC-B9ED-7B6063A13141}.Debug.Build.0 = Debug|Win32
+		{F758256C-EBC3-42AC-B9ED-7B6063A13141}.Release.ActiveCfg = Release|Win32
+		{F758256C-EBC3-42AC-B9ED-7B6063A13141}.Release.Build.0 = Release|Win32
+		{21EEB15B-AAFF-4BB7-9C24-3EF16C92F708}.Debug.ActiveCfg = Debug|Win32
+		{21EEB15B-AAFF-4BB7-9C24-3EF16C92F708}.Debug.Build.0 = Debug|Win32
+		{21EEB15B-AAFF-4BB7-9C24-3EF16C92F708}.Release.ActiveCfg = Release|Win32
+		{21EEB15B-AAFF-4BB7-9C24-3EF16C92F708}.Release.Build.0 = Release|Win32
+		{26FD8B53-672C-48ED-AAF4-598BF78BE12B}.Debug.ActiveCfg = Debug|Win32
+		{26FD8B53-672C-48ED-AAF4-598BF78BE12B}.Debug.Build.0 = Debug|Win32
+		{26FD8B53-672C-48ED-AAF4-598BF78BE12B}.Release.ActiveCfg = Release|Win32
+		{26FD8B53-672C-48ED-AAF4-598BF78BE12B}.Release.Build.0 = Release|Win32
+		{B1857F8D-0E41-46FE-B677-8E258D262F81}.Debug.ActiveCfg = Debug|Win32
+		{B1857F8D-0E41-46FE-B677-8E258D262F81}.Debug.Build.0 = Debug|Win32
+		{B1857F8D-0E41-46FE-B677-8E258D262F81}.Release.ActiveCfg = Release|Win32
+		{B1857F8D-0E41-46FE-B677-8E258D262F81}.Release.Build.0 = Release|Win32
+		{F32481B3-4814-4991-8CAF-1A4E9D84371E}.Debug.ActiveCfg = Debug|Win32
+		{F32481B3-4814-4991-8CAF-1A4E9D84371E}.Debug.Build.0 = Debug|Win32
+		{F32481B3-4814-4991-8CAF-1A4E9D84371E}.Release.ActiveCfg = Release|Win32
+		{F32481B3-4814-4991-8CAF-1A4E9D84371E}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

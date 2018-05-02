@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mp3", "mp3.vcproj", "{D0E3F4C5-1ABC-473B-AC6E-0C3254F903BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{D0E3F4C5-1ABC-473B-AC6E-0C3254F903BD}.Debug.ActiveCfg = Debug|Win32
+		{D0E3F4C5-1ABC-473B-AC6E-0C3254F903BD}.Debug.Build.0 = Debug|Win32
+		{D0E3F4C5-1ABC-473B-AC6E-0C3254F903BD}.Release.ActiveCfg = Release|Win32
+		{D0E3F4C5-1ABC-473B-AC6E-0C3254F903BD}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

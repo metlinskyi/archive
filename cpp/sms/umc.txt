@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=unicode">
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY><!--
+<div id="p_ban" style="position: absolute; left: 474px; top: 55px;"> 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+</div>
+-->&nbsp;
+<DIV id=p_pop 
+style="LEFT: 152px; VISIBILITY: hidden; POSITION: absolute; TOP: 40px"></DIV>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  
+  <TR>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        
+        <TR>
+          <TD><A href="index.html"><IMG height=49 alt="Титульна сторінка" 
+            src="img/umc10.gif" width=58 align=top border=0></A></TD>
+          <TD class=contenttext width="100%" bgColor=#d9e6f2>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              
+              <TR>
+                <TD><IMG height=12 src="img/tab3.gif" width=1></TD>
+                <TD><IMG height=12 src="img/tab3.gif" width=1></TD></TR>
+              <TR>
+                <TD class=shapka noWrap width="100%"><IMG height=1 
+                  src="img/tab3.gif" width=10>Найкращий зв'язок - доступний 
+                усім!</TD>
+                <TD class=shapka noWrap><IMG height=1 src="img/tab3.gif" 
+                  width=10><A href="javascript:add2favor();">
+                  <SCRIPT language=JavaScript>
+if(IE)document.write("<img src='img/add2favor.gif' width='111' height='13' border='0' alt='зробити закладку'>");
+if(NN)document.write("<img src='img/tab3.gif' width='111' height='13' border='0' alt=''>");
+</SCRIPT>
+                   <IMG height=13 alt="зробити закладку" src="img/add2favor.gif" 
+                  width=111 border=0></A><IMG height=1 src="img/tab3.gif" 
+                  width=10><A href="javascript:window.close();"><IMG height=13 
+                  alt="закрити вікно" src="img/button_close_u.gif" width=98 
+                  align=top border=0></A><IMG height=1 src="img/tab3.gif" 
+                  width=30></TD></TR>
+              <TR>
+                <TD><IMG height=12 src="img/tab3.gif" width=1></TD>
+                <TD><IMG height=12 src="img/tab3.gif" 
+            width=1></TD></TR></TABLE></TD></TR></TABLE></TD></TR>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=10 align=center border=0>
+        
+        <TR>
+          <TD class=contenttext><!--CONTENT-->
+            <FORM name=form1 action=/misc/sendsms.php method=post>
+            <H1 class=head align=center><BR>Відправ SMS</H1><SPAN 
+            class=contenttext>
+            <P>Відправте коротке текстове повiдомлення (<B>SMS</B> - Short 
+            Message Service )<BR>GSM абоненту <B>UMC</B> або абонентам iнших 
+            українських операторiв<BR>мобiльного зв`язку, що працюють у 
+            стандартi GSM. 
+            <P>Ви можете ввести декілька телефонних номерів відразу, розділяючи 
+            їх комою.</P></SPAN>
+            <TABLE cellSpacing=0 cellPadding=3 width=450 border=0>
+              
+              <TR>
+                <TD class=contenttext>Вкажiть оператора, до якого належить Ваш 
+                  адресат:</TD>
+                <TD class=contenttext vAlign=top height=20>Номер(и) 
+                телефонів:</TD></TR>
+              <TR vAlign=top>
+                <TD vAlign=top><SELECT class=navigform name=network1> 
+                    <OPTION value=GT1>Golden Telecom (+38 039)</OPTION> <OPTION 
+                    value=UMC selected>UMC (+38 050 або 044)</OPTION> <OPTION 
+                    value=JEANS>ДЖИНС (+38 050)</OPTION> <OPTION 
+                    value=WC>Wellcom (+38 068)</OPTION></SELECT></TD>
+                <TD vAlign=top><INPUT class=navigform maxLength=30 size=30 
+                  name=Phone1></TD></TR>
+              <TR>
+                <TD vAlign=top><SELECT class=navigform name=network2> 
+                    <OPTION value=GT1>Golden Telecom (+38 039)</OPTION> <OPTION 
+                    value=UMC selected>UMC (+38 050 або 044)</OPTION> <OPTION 
+                    value=JEANS>ДЖИНС (+38 050)</OPTION> <OPTION 
+                    value=WC>Wellcom (+38 068)</OPTION></SELECT> </TD>
+                <TD vAlign=top><INPUT class=navigform maxLength=30 size=30 
+                  name=Phone2></TD></TR>
+              <TR>
+                <TD vAlign=top><SELECT class=navigform name=network3> 
+                    <OPTION value=GT1>Golden Telecom (+38 039)</OPTION> <OPTION 
+                    value=UMC selected>UMC (+38 050 або 044)</OPTION> <OPTION 
+                    value=JEANS>ДЖИНС (+38 050)</OPTION> <OPTION 
+                    value=WC>Wellcom (+38 068)</OPTION></SELECT> </TD>
+                <TD vAlign=top><INPUT class=navigform maxLength=30 size=30 
+                  name=Phone3></TD></TR>
+              <TR>
+                <TD style="FONT-SIZE: 10px" vAlign=top align=left>
+                  <P class=contenttext><BR>
+                  <TABLE height=128 cellSpacing=0 cellPadding=0 width=168 
+                  background=img/banner_bg.gif border=0>
+                    
+                    <TR>
+                      <TD vAlign=center align=middle><!--UMC banner network-->
+                        <SCRIPT language=JavaScript>
+<!-- 
+document.write("<script src='show.php?w=160&h=120&ref="+document.location+"'></script>");
+//--></SCRIPT>
+
+                        <SCRIPT 
+                        src="show.php?w=160&amp;h=120&amp;ref=http://www.umc.ua/umc_sendsms_u.html"></SCRIPT>
+                        <A 
+                        href="redirect.php?id=0&amp;link=http://www.umc.ua/news" 
+                        target=_blank><IMG 
+                        alt="UMC - Найкращий зв'язок - доступний усiм!" 
+                        src="http://www.umc.ua/img/banners/160x120.gif" 
+                        border=0></A><!--/UMC banner network--></TD></TR></TABLE></P></TD>
+                <TD vAlign=top><SPAN class=contenttext><BR>Введіть 
+                  повідомлення довжиною<BR>не більше ніж 120 символів:<BR><IMG 
+                  height=5 src="img/zero_t.gif" width=1><BR></SPAN><TEXTAREA class=navigform onkeypress=changetxt() onkeyup=changetxt() name=Message rows=4 wrap=virtual cols=40></TEXTAREA><SPAN 
+                  class=contenttext>
+                  <SCRIPT language=JavaScript>
+if(Reclama_msg){
+ document.write("<img src='img/zero_t.gif' width='1' height='5'><br><b>"+
+ Reclama_msg+
+ "</b><br></span><span class='tarifftext'>Це інформаційний текст UMC, який буде додано до Вашого повідомлення</span><span class='contenttext'><br>")
+}
+if(IE){document.write("<br><img src='img\/zero_t.gif' width='1' height='5'><br></span><input type='text' name='textfield62' size='3' readonly class='navigform' value='"+maxleng+"'><span class='contenttext'>&nbsp;символів залишилося.<br>");}
+</SCRIPT>
+                   <IMG height=5 src="img/zero_t.gif" width=1><BR><B>/UMC Oblast 
+                  - znyzhka na vyhidni dzvinky!</B><BR></SPAN><SPAN 
+                  class=tarifftext>Це інформаційний текст UMC, який буде додано 
+                  до Вашого повідомлення</SPAN><SPAN 
+                  class=contenttext><BR><BR><IMG height=5 src="img/zero_t.gif" 
+                  width=1><BR></SPAN><INPUT class=navigform readOnly size=3 
+                  value=118 name=textfield62><SPAN 
+                  class=contenttext>&nbsp;символів залишилося.<BR><!--
+<img src="img/zero_t.gif" width="1" height="5"><br>Вкажіть ваш контактний телефон:<br></span><input type="text" name="x-msisdn-from" class="navigform" size="30" maxlength="30"><span class="contenttext"><br>
+--><IMG height=5 src="img/zero_t.gif" width=1><BR>Підпиc 
+                  (максимум 10 символів):<BR></SPAN><INPUT class=navigform 
+                  onkeypress=change_maxleng() onkeyup=change_maxleng() 
+                  maxLength=10 size=12 name=sender_name><SPAN 
+                  class=contenttext><BR><IMG height=5 src="img/zero_t.gif" 
+                  width=1><BR>Не забудьте пiдписати Ваше повiдомлення.<BR><BR><A 
+                  class=contentlink href="javascript:FSubmit();"><IMG height=28 
+                  src="img/arrow_blue_t_1.gif" width=28 align=middle 
+                  border=0>Відправити SMS</A></SPAN></TD></TR></TABLE></FORM>
+            <P class=contenttext>При використанні кирилиці у повідомленні його 
+            буде відправлено кирилицею <BR>(якщо телефон адресата <A 
+            href="javascript:window.opener.location.href='umc_sms_guidec_u.html#inetmesgrus';window.opener.focus()">приймає 
+            кириличні SMS</A>) або транслітеровано згідно<BR>з <A 
+            class=contentlink href="javascript:tab_trans_u();">таблицєю 
+            транслітерації</A>. Довжина повідомлення при цьому збільшиться.</P>
+            <P class=contenttext>Щоб зробити Ваше SMS-повідомлення більш 
+            емоційним, використовуйте <BR>"<A class=contentlink 
+            href="javascript:tab_smiles_u();">смайлики</A>" i <A 
+            class=contentlink 
+            href="javascript:tab_symbols_u();">скорочення</A>!</P><!--END OF CONTENT--></TD></TR></TABLE></TD></TR>
+  <TR>
+    <TD class=contenttext align=middle>
+      <HR style="COLOR: #6699cc" width="100%" noShade SIZE=2>
+      (C) copyright <B>UMC</B> 
+2001-2003<BR><BR></TD></TR></TABLE></BODY></HTML>

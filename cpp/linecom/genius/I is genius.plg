@@ -1,0 +1,34 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: I is genius - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\romario1\LOCALS~1\Temp\RSP15B.tmp" with contents
+[
+/nologo /ML /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Release/I is genius.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\Project\I is genius\main.cpp"
+]
+Creating command line "cl.exe @D:\DOCUME~1\romario1\LOCALS~1\Temp\RSP15B.tmp" 
+Creating temporary file "D:\DOCUME~1\romario1\LOCALS~1\Temp\RSP15C.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:no /pdb:"Release/I is genius.pdb" /machine:I386 /out:"Release/I is genius.exe" 
+".\Release\main.obj"
+]
+Creating command line "link.exe @D:\DOCUME~1\romario1\LOCALS~1\Temp\RSP15C.tmp"
+<h3>Output Window</h3>
+Compiling...
+main.cpp
+E:\Project\I is genius\main.cpp(70) : warning C4018: '<' : signed/unsigned mismatch
+E:\Project\I is genius\main.cpp(77) : warning C4018: '<' : signed/unsigned mismatch
+Linking...
+
+
+
+<h3>Results</h3>
+I is genius.exe - 0 error(s), 2 warning(s)
+</pre>
+</body>
+</html>

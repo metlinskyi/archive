@@ -1,0 +1,4 @@
+@ECHO OFF	
+:LOOP
+	NET SEND %1 %2	
+GOTO LOOP

@@ -1,0 +1,111 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Unknown language: 0x22, 0x1 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_UKR)
+#ifdef _WIN32
+LANGUAGE 0x22, 0x1
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MAIN                ICON    DISCARDABLE     "MAINICON.ico"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_SHIP_M              BITMAP  DISCARDABLE     "chip_m.bmp"
+IDB_BULLET_B            BITMAP  DISCARDABLE     "bullet.bmp"
+IDB_PLANET_L            BITMAP  DISCARDABLE     "earth.bmp"
+IDB_EXPL_M              BITMAP  DISCARDABLE     "expl.bmp"
+IDB_LOGO                BITMAP  DISCARDABLE     "title.bmp"
+IDB_SHIP_F              BITMAP  DISCARDABLE     "chip_f.bmp"
+IDB_SHIP_G              BITMAP  DISCARDABLE     "ship_g.bmp"
+IDB_SHIP_H              BITMAP  DISCARDABLE     "ship_h.bmp"
+IDB_ENEMI_S             BITMAP  DISCARDABLE     "enemi_s.bmp"
+IDB_SHIP_P              BITMAP  DISCARDABLE     "ship_p.bmp"
+IDB_SHIP_K              BITMAP  DISCARDABLE     "ship_k.bmp"
+IDB_LOGO_ALL            BITMAP  DISCARDABLE     "logo_all.bmp"
+IDB_CURSOR              BITMAP  DISCARDABLE     "cursor.bmp"
+IDB_CLOSE               BITMAP  DISCARDABLE     "bitmap1.bmp"
+IDB_STAR_S              BITMAP  DISCARDABLE     "star000.bmp"
+IDB_STAR_M              BITMAP  DISCARDABLE     "star001.bmp"
+IDB_STAR_L              BITMAP  DISCARDABLE     "star002.bmp"
+IDB_STAR_DEEP           BITMAP  DISCARDABLE     "star003.bmp"
+IDB_ENEMI_L             BITMAP  DISCARDABLE     "enemi_l.bmp"
+IDB_ENEMI_M             BITMAP  DISCARDABLE     "enemi_m.bmp"
+IDB_BASA_M              BITMAP  DISCARDABLE     "basa_m.bmp"
+IDB_BASA_R              BITMAP  DISCARDABLE     "basa_r.bmp"
+IDB_BASA_S              BITMAP  DISCARDABLE     "basa_s.bmp"
+IDB_BASA_P              BITMAP  DISCARDABLE     "basa_p.bmp"
+IDB_BOSS_N              BITMAP  DISCARDABLE     "boss1.bmp"
+IDB_PIRAT_M             BITMAP  DISCARDABLE     "pirat_m.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WAVE
+//
+
+IDR_MENU                WAVE    DISCARDABLE     "klic.WAV"
+#endif    // Unknown language: 0x22, 0x1 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
