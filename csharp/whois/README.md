@@ -6,7 +6,7 @@ The Synthetic Super Tests must know!
 
 ![staging-photo]
 
-[staging-photo]: https://raw.github.com/Interreto/.net/master/string.jpg "Array of strings"
+[staging-photo]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/csharp/string.jpg "Array of strings"
 
 &nbsp;
 ============

@@ -1,6 +1,6 @@
 ![alt text][html-normalizer-logo] html-normalizer
 ===========
-[html-normalizer-logo]: https://raw.github.com/Interreto/.net/master/html-normalizer.png "HTML Normalizer"
+[html-normalizer-logo]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/csharp/html-normalizer.png "HTML Normalizer"
 
 HTML-normalizer is a functionality for page speeding.
 

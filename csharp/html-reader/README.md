@@ -1,6 +1,6 @@
 ![alt text][html-reader-logo] html-reader 
 ===========
-[html-reader-logo]: https://raw.github.com/Interreto/.net/master/html-reader.png "HTML Reader is html parser and tag mapping"
+[html-reader-logo]: https://raw.github.com/Imetlinskyi/www.metlinskyi.com/master/csharp/html-reader.png "HTML Reader is html parser and tag mapping"
 
 The utility to simple mapping a HTML content on objects. You need just add attributes.
 ```C#

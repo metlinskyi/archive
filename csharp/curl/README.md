@@ -1,6 +1,6 @@
 ![alt text][curl-logo] curl
 ============
-[curl-logo]: https://raw.github.com/Interreto/.net/master/curl.png "Curl.net it's easy for HTTP requests"
+[curl-logo]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/csharp/curl.png "Curl.net it's easy for HTTP requests"
 
 ###### Usage
 Curl is a sexy library for easy HTTP requests

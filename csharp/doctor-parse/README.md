@@ -1,6 +1,6 @@
 ![alt text][doctor-parse-logo] doctor-parse 
 ============
-[doctor-parse-logo]: https://raw.github.com/Interreto/.net/master/doctor-parser.png "Dr.Parse is batch processing of text data"
+[doctor-parse-logo]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/csharp/doctor-parser.png "Dr.Parse is batch processing of text data"
 
 Dr. Parse is a solution for easy management of the process of parsing.
 ###### Usage
