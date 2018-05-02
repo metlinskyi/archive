@@ -14,7 +14,7 @@ Curl is a sexy library for easy HTTP requests
 		.Responce()
 		.Content();
 ```
-[read more](https://github.com/interreto/.net/tree/master/curl)
+[read more](https://github.com/metlinskyi/www.metlinskyi.com/tree/master/csharp/curl)
 
 ![alt text][doctor-parse-logo] doctor-parse 
 ============
@@ -85,7 +85,7 @@ Operations:
   - value: <div><b>Rule $2. $3.</b></div>\
 ```
 
-[read more](https://github.com/interreto/.net/tree/master/doctor-parse)	
+[read more](https://github.com/metlinskyi/www.metlinskyi.com/tree/master/csharp/doctor-parse)	
 	
 ![alt text][html-normalizer-logo] html-normalizer
 ===========
@@ -137,7 +137,7 @@ HTML-normalizer is a functionality for page speeding.
 </html>
 ```
 
-[read more](https://github.com/interreto/.net/tree/master/html-normalizer)	
+[read more](https://github.com/metlinskyi/www.metlinskyi.com/tree/master/csharp/html-normalizer)	
 
 ![alt text][html-reader-logo] html-reader 
 ===========
@@ -160,7 +160,7 @@ class Link {
 }
 ```
 
-[read more](https://github.com/interreto/.net/tree/master/html-reader)	
+[read more](https://github.com/metlinskyi/www.metlinskyi.com/tree/master/csharp/html-reader)	
 
 switch
 ======
