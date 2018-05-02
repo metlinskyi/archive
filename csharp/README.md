@@ -1,6 +1,6 @@
 ![alt text][curl-logo] curl
 ============
-[curl-logo]: https://raw.github.com/interreto/.net/master/curl.png "Curl.net it's easy for HTTP requests"
+[curl-logo]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/csharp/curl.png "Curl.net it's easy for HTTP requests"
 
 ###### Usage
 Curl is a sexy library for easy HTTP requests
@@ -18,7 +18,7 @@ Curl is a sexy library for easy HTTP requests
 
 ![alt text][doctor-parse-logo] doctor-parse 
 ============
-[doctor-parse-logo]: https://raw.github.com/interreto/.net/master/doctor-parser.png "Dr.Parse is batch processing of text data"
+[doctor-parse-logo]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/csharp/doctor-parser.png "Dr.Parse is batch processing of text data"
 
 Dr. Parse is a solution for easy management of the process of parsing.
 
@@ -89,7 +89,7 @@ Operations:
 	
 ![alt text][html-normalizer-logo] html-normalizer
 ===========
-[html-normalizer-logo]: https://raw.github.com/interreto/.net/master/html-normalizer.png "HTML Normalizer"
+[html-normalizer-logo]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/csharp/html-normalizer.png "HTML Normalizer"
 
 HTML-normalizer is a functionality for page speeding.
 
@@ -141,7 +141,7 @@ HTML-normalizer is a functionality for page speeding.
 
 ![alt text][html-reader-logo] html-reader 
 ===========
-[html-reader-logo]: https://raw.github.com/interreto/.net/master/html-reader.png "HTML Reader is html parser and tag mapping"
+[html-reader-logo]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/csharp/html-reader.png "HTML Reader is html parser and tag mapping"
 
 The utility to simple mapping a HTML content on objects. You need just add attributes.
 ```C#
@@ -194,7 +194,7 @@ whois...
 Do You know who is who in .net? No... I don't know too ... 
 The Synthetic Super Tests must know!
 
-![staging-photo](https://raw.github.com/interreto/.net/master/string.jpg "Array of strings")
+![staging-photo](https://raw.github.com/metlinskyi/www.metlinskyi.com/master/csharp/string.jpg "Array of strings")
 Array of strings
 
 &nbsp;
