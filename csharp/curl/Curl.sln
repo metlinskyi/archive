@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curl", "Curl\Curl.csproj", "{98F167AC-0CFB-4E7F-8E67-57615B373DED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curl.Test", "Curl.Test\Curl.Test.csproj", "{D71F62AB-0202-48EF-AFBB-0861A95E1D34}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98F167AC-0CFB-4E7F-8E67-57615B373DED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98F167AC-0CFB-4E7F-8E67-57615B373DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98F167AC-0CFB-4E7F-8E67-57615B373DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98F167AC-0CFB-4E7F-8E67-57615B373DED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D71F62AB-0202-48EF-AFBB-0861A95E1D34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D71F62AB-0202-48EF-AFBB-0861A95E1D34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D71F62AB-0202-48EF-AFBB-0861A95E1D34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D71F62AB-0202-48EF-AFBB-0861A95E1D34}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

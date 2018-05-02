@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="DataModelTargetContainer">
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DataModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="DataModelContainer" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="WebSiteSet" EntityType="DataModel.WebSite" />
+          <EntitySet Name="WebPageSet" EntityType="DataModel.WebPage" />
+          <AssociationSet Name="WebSiteWebPage" Association="DataModel.WebSiteWebPage">
+            <End Role="WebSite" EntitySet="WebSiteSet" />
+            <End Role="WebPage" EntitySet="WebPageSet" />
+          </AssociationSet>
+          <EntitySet Name="LinkSet" EntityType="DataModel.Link" />
+          <AssociationSet Name="WebSiteLink" Association="DataModel.WebSiteLink">
+            <End Role="WebSite" EntitySet="WebSiteSet" />
+            <End Role="Link" EntitySet="LinkSet" />
+          </AssociationSet>
+          <AssociationSet Name="WebPageLink" Association="DataModel.WebPageLink">
+            <End Role="WebPage" EntitySet="WebPageSet" />
+            <End Role="Link" EntitySet="LinkSet" />
+          </AssociationSet>
+          <EntitySet Name="SourceSet" EntityType="DataModel.Source" />
+          <EntitySet Name="LinkToSourceSet" EntityType="DataModel.LinkToSource" />
+          <AssociationSet Name="SourceLinkToSource" Association="DataModel.SourceLinkToSource">
+            <End Role="Source" EntitySet="SourceSet" />
+            <End Role="LinkToSource" EntitySet="LinkToSourceSet" />
+          </AssociationSet>
+          <AssociationSet Name="LinkLinkToSource" Association="DataModel.LinkLinkToSource">
+            <End Role="Link" EntitySet="LinkSet" />
+            <End Role="LinkToSource" EntitySet="LinkToSourceSet" />
+          </AssociationSet>
+          <EntitySet Name="ImageSet" EntityType="DataModel.Image" />
+          <AssociationSet Name="ImageSource" Association="DataModel.ImageSource">
+            <End Role="Image" EntitySet="ImageSet" />
+            <End Role="Source" EntitySet="SourceSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="WebSite">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Domain" Nullable="false" />
+          <NavigationProperty Name="WebPage" Relationship="DataModel.WebSiteWebPage" FromRole="WebSite" ToRole="WebPage" />
+          <NavigationProperty Name="Link" Relationship="DataModel.WebSiteLink" FromRole="WebSite" ToRole="Link" />
+          <Property Type="String" Name="Favicon" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WebPage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <NavigationProperty Name="WebSite" Relationship="DataModel.WebSiteWebPage" FromRole="WebPage" ToRole="WebSite" />
+          <Property Type="Int32" Name="WebSiteId" Nullable="false" />
+          <NavigationProperty Name="Link" Relationship="DataModel.WebPageLink" FromRole="WebPage" ToRole="Link" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+          <Property Type="DateTime" Name="Version" Nullable="true" />
+          <Property Type="String" Name="Content" Nullable="true" />
+        </EntityType>
+        <Association Name="WebSiteWebPage">
+          <End Type="DataModel.WebSite" Role="WebSite" Multiplicity="1" />
+          <End Type="DataModel.WebPage" Role="WebPage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebSite">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebPage">
+              <PropertyRef Name="WebSiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Link">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <NavigationProperty Name="WebSite" Relationship="DataModel.WebSiteLink" FromRole="Link" ToRole="WebSite" />
+          <Property Type="Int32" Name="WebSiteId" Nullable="false" />
+          <Property Type="String" Name="Href" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="true" />
+          <Property Type="String" Name="Text" Nullable="true" />
+          <NavigationProperty Name="WebPage" Relationship="DataModel.WebPageLink" FromRole="Link" ToRole="WebPage" />
+          <Property Type="String" Name="Hash" Nullable="false" />
+          <NavigationProperty Name="LinkToSource" Relationship="DataModel.LinkLinkToSource" FromRole="Link" ToRole="LinkToSource" />
+        </EntityType>
+        <Association Name="WebSiteLink">
+          <End Type="DataModel.WebSite" Role="WebSite" Multiplicity="1" />
+          <End Type="DataModel.Link" Role="Link" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WebSite">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Link">
+              <PropertyRef Name="WebSiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="WebPageLink">
+          <End Type="DataModel.WebPage" Role="WebPage" Multiplicity="1" />
+          <End Type="DataModel.Link" Role="Link" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Source">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Value" Nullable="false" />
+          <Property Type="String" Name="Status" Nullable="false" />
+          <Property Type="String" Name="Version" Nullable="false" />
+          <NavigationProperty Name="LinkToSource" Relationship="DataModel.SourceLinkToSource" FromRole="Source" ToRole="LinkToSource" />
+          <NavigationProperty Name="Image" Relationship="DataModel.ImageSource" FromRole="Source" ToRole="Image" />
+        </EntityType>
+        <EntityType Name="LinkToSource">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <NavigationProperty Name="Source" Relationship="DataModel.SourceLinkToSource" FromRole="LinkToSource" ToRole="Source" />
+          <Property Type="Int32" Name="SourceId" Nullable="false" />
+          <NavigationProperty Name="Link" Relationship="DataModel.LinkLinkToSource" FromRole="LinkToSource" ToRole="Link" />
+          <Property Type="Int32" Name="LinkId" Nullable="false" />
+        </EntityType>
+        <Association Name="SourceLinkToSource">
+          <End Type="DataModel.Source" Role="Source" Multiplicity="1" />
+          <End Type="DataModel.LinkToSource" Role="LinkToSource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Source">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LinkToSource">
+              <PropertyRef Name="SourceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LinkLinkToSource">
+          <End Type="DataModel.Link" Role="Link" Multiplicity="1" />
+          <End Type="DataModel.LinkToSource" Role="LinkToSource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Link">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LinkToSource">
+              <PropertyRef Name="LinkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="Width" Nullable="false" />
+          <Property Type="Int32" Name="Height" Nullable="false" />
+          <Property Type="Int32" Name="Type" Nullable="false" />
+          <NavigationProperty Name="Source" Relationship="DataModel.ImageSource" FromRole="Image" ToRole="Source" />
+        </EntityType>
+        <Association Name="ImageSource">
+          <End Type="DataModel.Image" Role="Image" Multiplicity="1" />
+          <End Type="DataModel.Source" Role="Source" Multiplicity="1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <Alias Key="Model" Value="DataModel" />
+        <Alias Key="Target" Value="DataModel.Store" />
+        <EntityContainerMapping CdmEntityContainer="DataModelContainer" StorageEntityContainer="DataModelTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="DataModel" xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <EntityTypeShape EntityType="DataModel.WebSite" Width="1.5" PointX="0.5" PointY="0.5" Height="1.7566536458333335" />
+        <EntityTypeShape EntityType="DataModel.WebPage" Width="1.5" PointX="2.375" PointY="3.5" Height="2.0853483072916656" />
+        <AssociationConnector Association="DataModel.WebSiteWebPage">
+          <ConnectorPoint PointX="1.25" PointY="2.2566536458333335" />
+          <ConnectorPoint PointX="1.25" PointY="4.5426741536458328" />
+          <ConnectorPoint PointX="2.375" PointY="4.5426741536458328" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="DataModel.Link" Width="1.5" PointX="2.375" PointY="0.5" Height="2.41404296875" />
+        <AssociationConnector Association="DataModel.WebSiteLink">
+          <ConnectorPoint PointX="2" PointY="1.3783268229166668" />
+          <ConnectorPoint PointX="2.375" PointY="1.3783268229166668" />
+        </AssociationConnector>
+        <AssociationConnector Association="DataModel.WebPageLink">
+          <ConnectorPoint PointX="3.125" PointY="3.5" />
+          <ConnectorPoint PointX="3.125" PointY="2.91404296875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="DataModel.Source" Width="1.5" PointX="4.25" PointY="0.5" Height="1.7566536458333339" />
+        <EntityTypeShape EntityType="DataModel.LinkToSource" Width="1.5" PointX="5" PointY="3.5" Height="1.7566536458333326" />
+        <AssociationConnector Association="DataModel.SourceLinkToSource">
+          <ConnectorPoint PointX="5.375" PointY="2.2566536458333339" />
+          <ConnectorPoint PointX="5.375" PointY="3.5" />
+        </AssociationConnector>
+        <AssociationConnector Association="DataModel.LinkLinkToSource">
+          <ConnectorPoint PointX="3.875" PointY="2.616598307291667" />
+          <ConnectorPoint PointX="5.291666666666667" PointY="2.6165983072916665" />
+          <ConnectorPoint PointX="5.458333333333333" PointY="2.616598307291667" />
+          <ConnectorPoint PointX="6" PointY="2.616598307291667" />
+          <ConnectorPoint PointX="6" PointY="3.5" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="DataModel.Image" Width="1.5" PointX="6.25" PointY="0.5" Height="1.592306315104167" />
+        <AssociationConnector Association="DataModel.ImageSource">
+          <ConnectorPoint PointX="6.25" PointY="1.3783268229166668" />
+          <ConnectorPoint PointX="5.75" PointY="1.3783268229166668" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

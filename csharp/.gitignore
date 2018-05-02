@@ -1,0 +1,21 @@
+# Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
+bin
+obj
+
+# mstest test results
+TestResults
+switch/Switch.v12.suo
+html-reader/HtmlReader.v12.suo
+html-normalizer/HtmlNormalizer.v12.suo
+html-normalizer/HtmlNormalizer/HtmlNormalizer.v12.suo
+curl/Curl.v12.suo
+curl/Curl.v12.suo
+curl/Curl.v12.suo
+html-normalizer/Visual Studio 2013
+html-normalizer/packages/
+html-reader/Visual Studio 2013/Visualizers/
+direx/.vs/Dir.Ex/v14/.suo
+direx/packages/
+*/.vs/
+packages/
+.vs/
