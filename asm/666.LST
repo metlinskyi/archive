@@ -1,0 +1,153 @@
+Turbo Assembler	 Version 3.2	    02/26/04 16:25:51	    Page 1
+E:\Project\ASM\666.ASM
+
+
+
+      1	      =0004		     RED	     EQU     04h
+      2	      =0002		     GREEN	     EQU     02h
+      3	      =000C		     LIGHTRED	     EQU     0Ch
+      4	      =000A		     LIGHTGREEN	     EQU     0Ah
+      5	      =0009		     LIGTHBLUE	     EQU     09h
+      6
+      7				     DELAY MACRO time
+      8					     local   ext,iter
+      9					     push    cx
+     10					     mov     cx,time
+     11				     ext:
+     12					     push    cx
+     13					     mov     cx,5000
+     14				     iter:
+     15					     loop    iter
+     16					     pop     cx
+     17					     loop    ext
+     18					     pop     cx
+     19				     ENDM
+     20
+     21				     HLINE MACRO x1,y1,x2,color
+     22					     MOV     BX,color
+     23					     MOV     CX,x1
+     24					     MOV     DX,y1
+     25				     @1:
+     26					     MOV     AH,0CH
+     27					     MOV     AL,BL
+     28					     INT     10H
+     29					     INC     CX
+     30					     CMP     CX,x2
+     31					     JNA     @1
+     32				     ENDM
+     33
+     34				     VLINE MACRO x1,y1,y2,color
+     35					     MOV     BX,color
+     36					     MOV     CX,x1
+     37					     MOV     DX,y1
+     38				     @2:
+     39					     MOV     AH,0CH
+     40					     MOV     AL,BL
+     41					     INT     10H
+     42					     INC     DX
+     43					     CMP     DX,y2
+     44					     JNA     @2
+     45				     ENDM
+     46
+     47				     FILL MACRO	x1,y1,color
+     48				     ENDM
+     49
+     50	0000			     CODESG  SEGMENT  PARA  'Code'
+     51					      ASSUME SS:CODESG,	CS:CODESG
+     52					      ORG     100H
+     53	0100			     MAIN    PROC    FAR
+     54				     ;------------ VIDEO MODE ---------------------------
+     55	0100  B4 00			     MOV     AH,00
+     56	0102  B0 0D			     MOV     AL,0DH
+     57	0104  CD 10			     INT     10H
+Turbo Assembler	 Version 3.2	    02/26/04 16:25:51	    Page 2
+E:\Project\ASM\666.ASM
+
+
+
+     58
+     59	0106  B4 0B			     MOV     AH,0BH
+     60	0108  B7 00			     MOV     BH,00
+     61	010A  B3 00			     MOV     BL,00H
+     62	010C  CD 10			     INT     10H
+     63				     ;---------------------------------------------------
+     64
+     65
+     66				     ;-------------- DRAW LINE --------------------------
+     67					  HLINE	100,50,200,LIGTHBLUE
+1    68	010E  BB 0009			     MOV     BX,LIGTHBLUE
+1    69	0111  B9 0064			     MOV     CX,100
+1    70	0114  BA 0032			     MOV     DX,50
+1    71	0117			     @1:
+1    72	0117  B4 0C			     MOV     AH,0CH
+1    73	0119  8A C3			     MOV     AL,BL
+1    74	011B  CD 10			     INT     10H
+1    75	011D  41			     INC     CX
+1    76	011E  81 F9 00C8		     CMP     CX,200
+1    77	0122  76 F3			     JNA     @1
+     78					  VLINE	100,50,100,LIGTHBLUE
+1    79	0124  BB 0009			     MOV     BX,LIGTHBLUE
+1    80	0127  B9 0064			     MOV     CX,100
+1    81	012A  BA 0032			     MOV     DX,50
+1    82	012D			     @2:
+1    83	012D  B4 0C			     MOV     AH,0CH
+1    84	012F  8A C3			     MOV     AL,BL
+1    85	0131  CD 10			     INT     10H
+1    86	0133  42			     INC     DX
+1    87	0134  83 FA 64			     CMP     DX,100
+1    88	0137  76 F4			     JNA     @2
+     89
+     90				     ;-------------  E X I T ----------------------------
+     91				     ;key press
+     92	0139  B4 00		     exit:   MOV     AH,00H
+     93	013B  CD 16			     INT     16H
+     94				     ;init text	mode
+     95	013D  B4 00			     MOV     AH,00
+     96	013F  B0 03			     MOV     AL,03H
+     97	0141  CD 10			     INT     10H
+     98				     ;quit programm:
+     99	0143  B0 00			     MOV     AL,0
+    100	0145  B4 4C			     MOV     AH,04CH
+    101	0147  CD 21			     INT     21H
+    102	0149  CB			     RET
+    103	014A			     MAIN    ENDP
+    104
+    105	014A			     CODESG  ENDS
+    106				     END
+Turbo Assembler	 Version 3.2	    02/26/04 16:25:51	    Page 3
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??DATE				  Text	 "02/26/04"
+??FILENAME			  Text	 "666	  "
+??TIME				  Text	 "16:25:51"
+??VERSION			  Number 0314
+@1				  Near	 CODESG:0117
+@2				  Near	 CODESG:012D
+@CPU				  Text	 0101H
+@CURSEG				  Text	 CODESG
+@FILENAME			  Text	 666
+@WORDSIZE			  Text	 2
+EXIT				  Near	 CODESG:0139
+GREEN				  Number 0002
+LIGHTGREEN			  Number 000A
+LIGHTRED			  Number 000C
+LIGTHBLUE			  Number 0009
+MAIN				  Far	 CODESG:0100
+RED				  Number 0004
+
+Macro Name
+
+DELAY
+FILL
+HLINE
+VLINE
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+CODESG				  16  014A Para	  none	  CODE
+

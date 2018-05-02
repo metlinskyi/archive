@@ -1,0 +1,175 @@
+Turbo Assembler	 Version 3.2	    12/19/03 01:09:33	    Page 1
+E:\Project\ASM\lr6.ASM
+
+
+
+      1				     MASM
+      2	0000			     MODEL small
+      3	0000			     STACK 512
+      4
+      5				     show_mes	macro	 message
+      6					     mov     ah,09h
+      7					     lea     dx,message
+      8					     int     21h
+      9				     endm
+     10					     ;структура	для ввода
+     11	*000				     SBufer  struc
+     12	*000  01*(28)			       len_buf	db  40
+     13	*001  01*(00)			       len_in	db  0
+     14	*002  01*(2A*(20))		       buf_in	db  42 dup(20h)
+     15	*02C				     ends
+     16
+     17	0000			     .data
+     18	0000  40*(20) 00		     curdir	   db	64 dup(20h),0
+     19	0041  00000000sr		     lpcurdir	   dd	curdir
+     20
+     21	0045  63 3A 5C 64 69 72	32+	     namedir	   db	"c:\dir2",0
+     22	      00
+     23	004D  00000045sr		     lpnamedir	   dd	namedir
+     24
+     25	0051  62 2E 74 78 74 00		     namefile	   db	'b.txt',0
+     26	0057  00000051sr		     lpnamefile	   dd	namefile
+     27
+     28	005B  6D 61 6B 65 20 64	69+	     mess1	   db	'make dir',0ah,0dh,'$'
+     29	      72 0A 0D 24
+     30	0066  69 6E 70 75 74 3A	20+	     mess2	   db	'input:	',0ah,0dh,'$'
+     31	      0A 0D 24
+     32	0070  28 00 2A*(20)		     bufer	   SBufer <>
+     33	009C  0000			     handle	   dw	0
+     34
+     35	009E			     .code
+     36
+     37	0000			     main:
+     38	0000  B8 0000s			     mov ax,@data
+     39	0003  8E D8			     mov ds,ax
+     40
+     41					     ;get current dir
+     42	0005  C5 36 0041r		     lds si,lpcurdir
+     43	0009  B4 47			     mov ah,47h
+     44	000B  CD 21			     int 21h
+     45
+     46					     ;make dir
+     47	000D  C5 16 004Dr		     lds dx,lpnamedir
+     48	0011  B4 39			     mov ah,39h
+     49	0013  CD 21			     int 21h
+     50					     show_mes mess1
+1    51	0015  B4 09			     mov     ah,09h
+1    52	0017  BA 005Br			     lea     dx,mess1
+1    53	001A  CD 21			     int     21h
+     54
+     55
+     56
+     57					     ;make file
+Turbo Assembler	 Version 3.2	    12/19/03 01:09:33	    Page 2
+E:\Project\ASM\lr6.ASM
+
+
+
+     58	001C  33 C9			     xor cx,cx
+     59	001E  BB 0002			     mov bx,2
+     60	0021  BA 0012			     mov dx,12h
+     61	0024  C5 36 0057r		     lds si,lpnamefile
+     62	0028  B4 6C			     mov ah,6ch
+     63	002A  CD 21			     int 21h
+     64
+     65
+     66	002C  A3 009Cr			     mov handle,ax
+     67	002F  B4 42			     mov ah,42h
+     68	0031  32 C0			     xor al,al
+     69	0033  33 C9			     xor cx,cx
+     70	0035  33 D2			     xor dx,dx
+     71	0037  8B 1E 009Cr		     mov bx,handle
+     72	003B  CD 21			     int 21h
+     73
+     74					     show_mes mess2
+1    75	003D  B4 09			     mov     ah,09h
+1    76	003F  BA 0066r			     lea     dx,mess2
+1    77	0042  CD 21			     int     21h
+     78	0044  BA 0070r			     lea dx,bufer
+     79	0047  B4 0A			     mov ah,0ah
+     80	0049  CD 21			     int 21h
+     81
+     82	004B  B2 0A			     mov dl,0ah
+     83	004D  B4 02			     mov ah,2
+     84	004F  CD 21			     int 21h
+     85	0051  BE 0072r			     lea si,bufer.buf_in
+     86	0054  A0 0071r			     mov al,bufer.len_in
+     87	0057  98			     cbw
+     88	0058  56			     push si
+     89	0059  03 F0			     add si,ax
+     90	005B  46			     inc si
+     91	005C  C6 04 0A			     mov byte ptr[si],0ah
+     92	005F  5A			     pop dx
+     93	0060  8B 1E 009Cr		     mov bx,handle
+     94	0064  05 0002			     add ax,2
+     95	0067  8B C8			     mov cx,ax
+     96	0069  B4 40			     mov ah,40h
+     97	006B  CD 21			     int 21h
+     98
+     99					     ;read only
+    100	006D  33 C9			     xor cx,cx
+    101	006F  B9 0002			     mov cx,2
+    102	0072  C5 16 0057r		     lds dx,lpnamefile
+    103	0076  B8 4301			     mov ax,4301h
+    104	0079  CD 21			     int 21h
+    105	007B  EB 01 90			     jmp exit_OK
+    106
+    107	007E			     exit_OK:
+    108	007E  B8 4C00			     mov ax,4c00h
+    109	0081  CD 21			     int 21h
+    110				     end main
+Turbo Assembler	 Version 3.2	    12/19/03 01:09:33	    Page 3
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??DATE				  Text	 "12/19/03"
+??FILENAME			  Text	 "lr6	  "
+??TIME				  Text	 "01:09:33"
+??VERSION			  Number 0314
+@32BIT				  Text	 0
+@CODE				  Text	 _TEXT
+@CODESIZE			  Text	 0
+@CPU				  Text	 0101H
+@CURSEG				  Text	 _TEXT
+@DATA				  Text	 DGROUP
+@DATASIZE			  Text	 0
+@FILENAME			  Text	 LR6
+@INTERFACE			  Text	 00H
+@MODEL				  Text	 2
+@STACK				  Text	 DGROUP
+@WORDSIZE			  Text	 2
+BUFER				  Struct DGROUP:0070 SBUFER
+CURDIR				  Byte	 DGROUP:0000
+EXIT_OK				  Near	 _TEXT:007E
+HANDLE				  Word	 DGROUP:009C
+LPCURDIR			  Dword	 DGROUP:0041
+LPNAMEDIR			  Dword	 DGROUP:004D
+LPNAMEFILE			  Dword	 DGROUP:0057
+MAIN				  Near	 _TEXT:0000
+MESS1				  Byte	 DGROUP:005B
+MESS2				  Byte	 DGROUP:0066
+NAMEDIR				  Byte	 DGROUP:0045
+NAMEFILE			  Byte	 DGROUP:0051
+
+Macro Name
+
+SHOW_MES
+
+Structure Name			  Type	Offset
+
+SBUFER
+ LEN_BUF			  Byte	 0000
+ LEN_IN				  Byte	 0001
+ BUF_IN				  Byte	 0002
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+DGROUP				  Group
+  STACK				  16  0200 Para	  Stack	  STACK
+  _DATA				  16  009E Word	  Public  DATA
+_TEXT				  16  0083 Word	  Public  CODE
+

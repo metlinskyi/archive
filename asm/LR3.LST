@@ -1,0 +1,232 @@
+Turbo Assembler	 Version 3.2	    12/19/03 01:19:09	    Page 1
+E:\Project\ASM\lr3.ASM
+
+
+
+      1				     MASM
+      2	0000			     MODEL small
+      3	0000			     STACK 256
+      4
+      5	0000			     .data
+      6	0000  0A 0D 49 6E 70 75	74+   mess1 db 0ah,0dh,'Input :',0ah,0dh,'$'
+      7	      20 3A 0A 0D 24
+      8	000C  0A 0D 4E 75 6D 62	65+   mess2 db 0ah,0dh,'Number:',0ah,0dh,'$'
+      9	      72 3A 0A 0D 24
+     10
+     11	0018  ??		      len   db ?	 ;
+     12	0019  03*(20) 24	      str2  db 3 dup(" "),'$'
+     13	001D  50*(20) 24	      str1  db 80 dup("	"),'$'
+     14
+     15	006E  30*(??) 00 01 02 03 +   tables		 db	 48 dup(?) ,0,1,2,3,4,5,6,7,8,9, 7 dup (?)
+     16	      04 05 06 07 08 09	  +
+     17	      07*(??)
+     18	00AF  0A 0B 0C 0D 0E 0F	  +			 db	 0Ah,0Bh,0Ch,0Dh,0Eh,0Fh, 184 dup(?)
+     19	      B8*(??)
+     20	016D  0A 0D 54 6F 74 61	6C+   mess3 db 0ah,0dh,'Total:',0ah,0dh,'$'
+     21	      3A 0A 0D 24
+     22	0178  0000		      rez   dw 0
+     23	017A			     .code
+     24	0000			     main  proc
+     25	0000  B8 0000s			     mov ax,@data
+     26	0003  8E D8			     mov ds,ax
+     27	0005  8E C0			     mov es,ax
+     28
+     29	0007  BA 0000r			     lea dx,mess1
+     30	000A  B4 09			     mov ah,09h
+     31	000C  CD 21			     int 21h
+     32
+     33	000E  BA 001Dr			     lea dx,str1
+     34	0011  E8 0052			     call InputStr
+     35
+     36	0014  33 C0			     xor ax,ax
+     37	0016  A0 0014			     mov al,byte ptr [ds:0020]
+     38	0019  A2 0018r			     mov len,al
+     39
+     40	001C  BE 001Dr			     mov si,offset str1
+     41	001F  40			     inc ax
+     42	0020  03 F0			     add si,ax
+     43
+     44	0022  BF 0019r			     lea  di,str2
+     45	0025  8A 0E 0018r		     mov  cl,len
+     46	0029  E8 0041			     call GetNumbers
+     47
+     48	002C  BA 000Cr			     lea dx,mess2
+     49	002F  E8 002D			     call PrintMes
+     50
+     51	0032  BA 0019r			     lea dx,str2
+     52	0035  E8 0027			     call PrintMes
+     53
+     54	0038  BB 006Er			     lea bx,tables
+     55	003B  E8 0049			     call Convert
+     56
+     57	003E  BE 0019r			     lea  si,str2
+Turbo Assembler	 Version 3.2	    12/19/03 01:19:09	    Page 2
+E:\Project\ASM\lr3.ASM
+
+
+
+     58	0041  56			     push si
+     59	0042  BF 0178r			     lea  di,rez
+     60	0045  57			     push di
+     61	0046  E8 0053			     call Multiplate
+     62	0049  8B 1D			     mov  bx,[di]
+     63
+     64	004B  E8 006D			     call Convert_rez
+     65	004E  BA 016Dr			     lea dx,mess3
+     66	0051  E8 000B			     call PrintMes
+     67	0054  BA 0019r			     lea  dx,str2
+     68	0057  E8 0005			     call PrintMes
+     69
+     70	005A  B8 4C00			     mov ax,4c00h
+     71	005D  CD 21			     int 21h
+     72
+     73	005F			      main endp
+     74
+     75	005F			     PrintMes	proc   near
+     76	005F  50			     push  ax
+     77	0060  B4 09			     mov   ah,09h
+     78	0062  CD 21			     int   21h
+     79	0064  58			     pop   ax
+     80	0065  C3		     ret
+     81	0066			     PrintMes	endp
+     82
+     83	0066			     InputStr	proc   near
+     84	0066  50			     push  ax
+     85	0067  B4 0A			     mov   ah, 0Ah
+     86	0069  CD 21			     int   21h
+     87	006B  58			     pop   ax
+     88	006C  C3		     ret
+     89	006D			     InputStr	endp
+     90
+     91
+     92	006D			     GetNumbers	  proc	 near
+     93	006D  B2 03			     mov dl,3
+     94
+     95	006F  8A 04		     m3:     mov al,[si]
+     96	0071  4E			     dec si
+     97	0072  3C 30			     cmp al,30h
+     98	0074  72 F9			     jb	m3
+     99	0076  3C 39			     cmp al,39h
+    100	0078  77 F5			     ja	m3
+    101
+    102	007A  AA			     stosb
+    103	007B  FE CA			     dec dl
+    104	007D  80 FA 00			     cmp dl,0
+    105	0080  74 02			     jz	m4
+    106	0082  E2 EB			     loop m3
+    107
+    108	0084  33 C0		     m4:     xor ax,ax
+    109	0086  C3		     ret
+    110	0087			     GetNumbers	  endp
+    111
+    112	0087			     Convert	proc   near
+    113	0087  BE 0000			     mov si,0
+    114	008A  B9 0003			     mov cx,3
+Turbo Assembler	 Version 3.2	    12/19/03 01:19:09	    Page 3
+E:\Project\ASM\lr3.ASM
+
+
+
+    115	008D  33 C0			     xor ax,ax
+    116	008F			     m1:
+    117	008F  8A 84 0019r		     mov al,str2[si]
+    118	0093  D7			     xlat
+    119	0094  88 84 0019r		     mov str2[si],al
+    120	0098  46			     inc si
+    121	0099  E2 F4			     loop	 m1
+    122	009B  C3		     ret
+    123	009C			     convert  endp
+    124
+    125	009C			     Multiplate	 proc  near
+    126	009C  55			     push bp
+    127	009D  8B EC			     mov  bp,sp
+    128	009F  50			     push ax
+    129	00A0  33 C0			     xor  ax,ax
+    130	00A2  8B 7E 04			     mov  di,[bp+4]
+    131	00A5  8B 76 06			     mov  si,[bp+6]
+    132	00A8  8A 04			     mov  al,[si]
+    133	00AA  46			     inc  si
+    134	00AB  8A 1C			     mov  bl,[si]
+    135	00AD  F6 E3			     mul  bl
+    136	00AF  46			     inc  si
+    137	00B0  8A 1C			     mov  bl,[si]
+    138	00B2  F6 E3			     mul  bl
+    139	00B4  89 05			     mov  [di],ax
+    140	00B6  58			     pop  ax
+    141	00B7  8B E5			     mov sp,bp
+    142	00B9  5D			     pop bp
+    143	00BA  C3		     ret
+    144	00BB			     Multiplate	 endp
+    145
+    146	00BB			     Convert_rez  proc	near
+    147	00BB  BE 0000			    mov	si,0
+    148	00BE  8B C3			    mov	ax,bx
+    149	00C0  99			    cwd
+    150	00C1  B9 0064			    mov	cx,100
+    151	00C4  F7 F1			    div	cx
+    152	00C6  04 30			    add	al,30h
+    153	00C8  88 84 0019r		    mov	str2[si],al
+    154	00CC  8B C2			    mov	ax,dx
+    155	00CE  99			    cwd
+    156	00CF  B9 000A			    mov	cx,10
+    157	00D2  F7 F1			    div	cx
+    158	00D4  46			    inc	si
+    159	00D5  04 30			    add	al,30h
+    160	00D7  88 84 0019r		    mov	str2[si],al
+    161	00DB  46			    inc	si
+    162	00DC  80 C2 30			    add	dl,30h
+    163	00DF  88 94 0019r		    mov	str2[si],dl
+    164	00E3  C3		     ret
+    165	00E4			     Convert_rez endp
+    166
+    167				     end main
+Turbo Assembler	 Version 3.2	    12/19/03 01:19:09	    Page 4
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??DATE				  Text	 "12/19/03"
+??FILENAME			  Text	 "lr3	  "
+??TIME				  Text	 "01:19:09"
+??VERSION			  Number 0314
+@32BIT				  Text	 0
+@CODE				  Text	 _TEXT
+@CODESIZE			  Text	 0
+@CPU				  Text	 0101H
+@CURSEG				  Text	 _TEXT
+@DATA				  Text	 DGROUP
+@DATASIZE			  Text	 0
+@FILENAME			  Text	 LR3
+@INTERFACE			  Text	 00H
+@MODEL				  Text	 2
+@STACK				  Text	 DGROUP
+@WORDSIZE			  Text	 2
+CONVERT				  Near	 _TEXT:0087
+CONVERT_REZ			  Near	 _TEXT:00BB
+GETNUMBERS			  Near	 _TEXT:006D
+INPUTSTR			  Near	 _TEXT:0066
+LEN				  Byte	 DGROUP:0018
+M1				  Near	 _TEXT:008F
+M3				  Near	 _TEXT:006F
+M4				  Near	 _TEXT:0084
+MAIN				  Near	 _TEXT:0000
+MESS1				  Byte	 DGROUP:0000
+MESS2				  Byte	 DGROUP:000C
+MESS3				  Byte	 DGROUP:016D
+MULTIPLATE			  Near	 _TEXT:009C
+PRINTMES			  Near	 _TEXT:005F
+REZ				  Word	 DGROUP:0178
+STR1				  Byte	 DGROUP:001D
+STR2				  Byte	 DGROUP:0019
+TABLES				  Byte	 DGROUP:006E
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+DGROUP				  Group
+  STACK				  16  0100 Para	  Stack	  STACK
+  _DATA				  16  017A Word	  Public  DATA
+_TEXT				  16  00E4 Word	  Public  CODE
+
