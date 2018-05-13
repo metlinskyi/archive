@@ -1,5 +1,5 @@
-# Hello World...  
-### I'm a software engineer. 
+![favicon-ico] www.metlinskyi.com
+=======
 
 <table border="0" style="border:none 0"><td width="70%" valign="top">
 Hello World, my name is Roman. I have been working as software engineer since 2005.
@@ -29,3 +29,5 @@ Also, I have experiences with other web technologies such as PHP, MySql, Yii, Wo
 &nbsp;
 ============
 &copy; [The best software engineer in the Universe!](http://metlinskyi.com/)
+
+[favicon-ico]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/favicon.ico
