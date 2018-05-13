@@ -1,11 +1,10 @@
 ![alt text][stencil-logo] stencil
 =============
-[stencil-logo]: https://raw.github.com/interreto/.php/master/stencil/img/logo.png "Marker's generator"
+[stencil-logo]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/php/stencil/images/logo.png "Marker's generator"
 
 Stencil is a simple image cutter for markers or icons
 
 ###### Usage
-
 ```php
 
     // get image 
@@ -34,15 +33,15 @@ Tadam!
 
 ![img-result]
 
-[img-src]: https://raw.github.com/interreto/.php/master/stencil/img/src.jpg "Eiffel tower"
+[img-src]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/php/stencil/images/src.jpg "Eiffel tower"
 
-[img-blank]: https://raw.github.com/interreto/.php/master/stencil/img/blank.png
+[img-blank]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/php/stencil/images/blank.png
 
-[img-marker]: https://raw.github.com/interreto/.php/master/stencil/img/marker.png
+[img-marker]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/php/stencil/images/marker.png
 
-[img-result]: https://raw.github.com/interreto/.php/master/stencil/img/result.png
+[img-result]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/php/stencil/images/result.png
 
-You can see more results on our blog [juliet.life](https://juliet.life/mexico/) 
+You can see more results on our blog [juliet.life](http://www.juliet.life/sitemap/) 
 
 &nbsp;
 ============

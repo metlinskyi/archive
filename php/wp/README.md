@@ -1,11 +1,10 @@
 ![alt text][wp-logo] wp
 =============
-[wp-logo]: https://raw.github.com/interreto/.php/master/wp/logo.png "Wordpress helper"
+[wp-logo]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/php/wp/logo.png "Wordpress helper"
 
 Wp is a wordpress helper 
 
 ###### Usage
-
 ```php
 
 // Scripts settings
@@ -20,7 +19,6 @@ add_action('wp_enqueue_scripts', function () {
         'jquery' => 'js/jquery.js'
     ));
 });
-
 ```
 
 &nbsp;

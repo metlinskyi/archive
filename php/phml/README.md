@@ -1,13 +1,12 @@
+
 ![alt text][phml-logo] phml
 =============
-[phml-logo]: https://raw.github.com/interreto/.php/master/phml/logo.png "Php html templating"
+[phml-logo]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/php/phml/logo.png "Php html templating"
 
 PHML is new way in templating html for php.
 
 ###### Usage
-
 ```php
-
 Phml(5)
     ->doctype()
     ->html(function($e){
@@ -31,7 +30,6 @@ Phml(5)
                 });
             });
     });
-
 ```
 
 &nbsp;
