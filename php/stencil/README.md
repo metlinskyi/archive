@@ -37,9 +37,9 @@ Tadam!
 
 [img-blank]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/php/stencil/images/blank.png
 
-[img-marker]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/php/stencil/images/marker.png
+[img-marker]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/php/stencil/images/mask.png
 
-[img-result]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/php/stencil/images/result.png
+[img-result]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/php/stencil/images/result.png "Eiffel tower geo marker"
 
 You can see more results on our blog [juliet.life](http://www.juliet.life/sitemap/) 
 
