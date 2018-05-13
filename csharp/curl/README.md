@@ -37,4 +37,4 @@ Parser for a curl command
 
 &nbsp;
 ============
-&copy; [Software Engineer](http://metlinskyi.com/)
+&copy; [The best software engineer in the Universe!](http://metlinskyi.com/)
