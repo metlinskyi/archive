@@ -1,5 +1,4 @@
-# .cpp
-My old C++ code, just for memories 
+# CPP is my old C++ code, just for memories
 
 ```C++
     int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpszCmdLine, int nCmdShow)

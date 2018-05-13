@@ -1,5 +1,4 @@
-# .asm
-My old ASM code, just for memories
+# ASM is my old assembler code, just for memories
 
 ```ASM
     ;(a+b)^2
