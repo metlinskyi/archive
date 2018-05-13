@@ -10,9 +10,9 @@ I have worked for 10+ years at the position of software engineer with Asp.Net te
 
 Also, I have experiences with other web technologies such as PHP, MySql, Yii, Wordpress, as freelancer.
 
-<a href="https://github.com/metlinskyi/www.metlinskyi.com/tree/master/asm">Assembler (x86) <sup>*</sup></a>
+<a href="https://github.com/metlinskyi/www.metlinskyi.com/tree/master/asm">Assembler (x86)</a>&nbsp;<sup>*</sup>
 
-<a href="https://github.com/metlinskyi/www.metlinskyi.com/tree/master/cpp">C++ <sup>*</sup></a>
+<a href="https://github.com/metlinskyi/www.metlinskyi.com/tree/master/cpp">C++</a>&nbsp;<sup>*</sup>
 
 <a href="https://github.com/metlinskyi/www.metlinskyi.com/tree/master/csharp">C#</a>
 
