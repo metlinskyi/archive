@@ -10,6 +10,16 @@ I have worked for 10+ years at the position of software engineer with Asp.Net te
 
 Also, I have experiences with other web technologies such as PHP, MySql, Yii, Wordpress, as freelancer.
 
+<a href="https://github.com/metlinskyi/www.metlinskyi.com/tree/master/asm">Asm</a>
+
+<a href="https://github.com/metlinskyi/www.metlinskyi.com/tree/master/csharp">C#</a>
+
+<a href="https://github.com/metlinskyi/www.metlinskyi.com/tree/master/cpp">C++</a>
+
+<a href="https://github.com/metlinskyi/www.metlinskyi.com/tree/master/js">JavaScript</a>
+
+<a href="https://github.com/metlinskyi/www.metlinskyi.com/tree/master/php">PHP</a>
+
 </td><td><img src="https://github.com/interreto/www.metlinskyi.com/blob/master/me.png" alt="Typical software engineer" /></td>
 </table>
 
