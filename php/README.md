@@ -34,11 +34,11 @@ Phml(5)
     });
 ```
 
-[read more](https://github.com/metlinskyi/.php/tree/master/phml)	
+[read more](https://github.com/metlinskyi/www.metlinskyi.com/tree/master/php/phml)	
 
 ![alt text][stencil-logo] stencil
 =============
-[stencil-logo]: https://raw.github.com/metlinskyi/.php/master/stencil/img/logo.png "Marker's generator"
+[stencil-logo]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/php/stencil/images/logo.png "Marker's generator"
 
 Stencil is a simple image cutter for markers or icons
 
@@ -55,11 +55,11 @@ Stencil is a simple image cutter for markers or icons
 
 ```
 
-[read more](https://github.com/interreto/.php/tree/master/stencil)	
+[read more](https://github.com/metlinskyi/www.metlinskyi.com/tree/master/php/stencil)	
 
 ![alt text][wp-logo] wp
 =============
-[wp-logo]: https://raw.github.com/interreto/.php/master/wp/logo.png "Wordpress helper"
+[wp-logo]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/php/wp/logo.png "Wordpress helper"
 
 Wp is a wordpress helper 
 
@@ -80,7 +80,7 @@ add_action('wp_enqueue_scripts', function () {
 });
 ```
 
-[read more](https://github.com/interreto/.php/tree/master/wp)
+[read more](https://github.com/metlinskyi/www.metlinskyi.com/tree/master/php/wp)
 
 &nbsp;
 ============
