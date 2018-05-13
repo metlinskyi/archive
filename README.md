@@ -12,7 +12,7 @@ I have worked for 10+ years at the position of software engineer with Asp.Net te
 Also, I have experiences with other web technologies such as PHP, MySql, Yii, Wordpress, as freelancer.
 </td>
 <td>
-![me-logo](https://github.com/interreto/www.metlinskyi.com/blob/master/me.png)
+<img src="https://github.com/interreto/www.metlinskyi.com/blob/master/me.png">
 </td>
 </table>
 
