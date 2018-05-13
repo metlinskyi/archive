@@ -1,7 +1,14 @@
 # .asm
 My old ASM code, just for memories
 
+```ASM
+    ;(a+b)^2
+    mov   ax,a
+    mov   bx,b
+    add    ax,bx
+    mul    ax
+```
 
 &nbsp;
 ============
-&copy; [Software Engineer](http://metlinskyi.com/)
+&copy; [The best software engineer in the Universe!](http://metlinskyi.com/)
