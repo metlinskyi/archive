@@ -1,7 +1,7 @@
 # Hello World...  
 ### I'm a software engineer. 
 
-<table border="1">
+<table border="0">
 <td width="70%">
 Hello World, my name is Roman. I have been working as software engineer since 2005.
 
