@@ -2,7 +2,7 @@
 ============
 [curl-logo]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/csharp/curl.png "Curl.net it's easy for HTTP requests"
 
-###### Usage
+##### Usage
 Curl is a sexy library for easy HTTP requests
 ```C#
 	Curl
@@ -22,7 +22,7 @@ Curl is a sexy library for easy HTTP requests
 
 Dr. Parse is a solution for easy management of the process of parsing.
 
-###### Usage
+##### Usage
 Make YAML instruction for processor parsing.
 ``` Yaml
 Settings:
@@ -93,7 +93,7 @@ Operations:
 
 HTML-normalizer is a functionality for page speeding.
 
-###### Before
+##### Before
 ```HTML
 <!DOCTYPE html>
 <html>
@@ -115,7 +115,7 @@ HTML-normalizer is a functionality for page speeding.
 </html>
 ```
 
-###### After
+##### After
 ```HTML
 <!DOCTYPE html>
 <html>
