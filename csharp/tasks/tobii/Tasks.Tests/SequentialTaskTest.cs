@@ -36,6 +36,8 @@ namespace Tasks.Tests
                 .Select((i) => func(i))
                 .ToArray();
 
+            Task.Delay(1000).Wait();
+
             var b = sequence
                 .Skip(_sequence.Capacity >> 1)
                 .Select((i) => func(i))
