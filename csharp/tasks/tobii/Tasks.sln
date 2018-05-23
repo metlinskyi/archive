@@ -5,7 +5,12 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasks", "Tasks\Tasks.csproj", "{2313BBEA-FD1B-464C-AEA0-7E5158BF17C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.Tests", "Tasks.Tests\Tasks.Tests.csproj", "{E860B2C3-EE46-47DF-AEC1-23040D3D71F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasks.Tests", "Tasks.Tests\Tasks.Tests.csproj", "{E860B2C3-EE46-47DF-AEC1-23040D3D71F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6B1603FF-C0C7-49A7-909E-D4C43F831E7F}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

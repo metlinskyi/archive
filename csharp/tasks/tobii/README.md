@@ -11,6 +11,8 @@ sequential tasking
 
 SequentialTaskFactory.Factory.StartNew(()=>{ /* your code */ });
 
+SequentialTaskQueue.Queue.StartNew(()=>{ /* your code */ });
+
 ```
 
 &nbsp;
