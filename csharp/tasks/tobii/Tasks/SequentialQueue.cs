@@ -35,10 +35,5 @@ namespace Tasks
 
             lock (_locker) _dequeuing = false;
         }
-
-        private void Done(Task task)
-        {
-            lock (_locker) _dequeuing = false;
-        }
     }
 }
