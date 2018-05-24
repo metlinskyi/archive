@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Matrix", "Matrix\Matrix.csproj", "{493F71A3-DE91-4D23-AECB-4668AF8AA310}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix.UnitTests", "Matrix.UnitTests\Matrix.UnitTests.csproj", "{186B464C-451C-493D-A003-6F7137B4B161}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix.Web", "Matrix.Web\Matrix.Web.csproj", "{CA302145-D041-454B-9A36-805551677726}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{493F71A3-DE91-4D23-AECB-4668AF8AA310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{493F71A3-DE91-4D23-AECB-4668AF8AA310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{493F71A3-DE91-4D23-AECB-4668AF8AA310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{493F71A3-DE91-4D23-AECB-4668AF8AA310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{186B464C-451C-493D-A003-6F7137B4B161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{186B464C-451C-493D-A003-6F7137B4B161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{186B464C-451C-493D-A003-6F7137B4B161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{186B464C-451C-493D-A003-6F7137B4B161}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA302145-D041-454B-9A36-805551677726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA302145-D041-454B-9A36-805551677726}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA302145-D041-454B-9A36-805551677726}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA302145-D041-454B-9A36-805551677726}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C2EF997E-158B-4853-BA13-15D88155026E}
+	EndGlobalSection
+EndGlobal

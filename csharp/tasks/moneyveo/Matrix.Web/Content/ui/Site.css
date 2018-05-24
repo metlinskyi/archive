@@ -1,0 +1,27 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #020202;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+a.navbar-brand {
+    color: #ABF8D2;
+    text-shadow: 0px 0px 5px #ABF8D2;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}

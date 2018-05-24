@@ -71,3 +71,4 @@ packages/
 *.exe
 *.out
 *.app
+csharp/tasks/moneyveo/Matrix.Web/App_Data/*
