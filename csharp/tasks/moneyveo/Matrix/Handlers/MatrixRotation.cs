@@ -2,13 +2,10 @@
 {
     public class MatrixRotation<T> : IMatrixHandler
     {
-        private readonly sbyte _value;
-
         private readonly bool _clockwise;
 
-        public MatrixRotation(sbyte value, bool clockwise = true)
+        public MatrixRotation(bool clockwise = true)
         {
-            _value = value;
             _clockwise = clockwise;
         }
 

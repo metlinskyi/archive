@@ -25,7 +25,7 @@ namespace Matrix.Web.Controllers
             if (!id.HasValue)
                 return RedirectToAction("Index", "Default");
 
-            var matrix = _matrixStorage.Get(id.Value);
+            var matrix = _matrixStorage.Get<int>(id.Value);
 
             return View((MatrixModel)matrix);
         }
@@ -34,11 +34,11 @@ namespace Matrix.Web.Controllers
         public ActionResult Create(uint? size)
         {
             if (!size.HasValue)
-                size = (uint)new Random().Next(100, 1000000);
+                size = (uint)new Random().Next(10, 1000);
 
             var matrix = Matrix.Create<int>(size.Value).Handling(new MatrixRandomizer<int>(r => r.Next()));
 
-            Guid id = _matrixStorage.Put(matrix);
+            Guid id = _matrixStorage.Put<int>(matrix);
 
             return RedirectToAction("Index", new { id });
         }
@@ -46,7 +46,7 @@ namespace Matrix.Web.Controllers
         [HttpGet]
         public ActionResult Rotate(Guid id)
         {
-            var matrix = _matrixStorage.Get(id).Handling(new MatrixRotation<int>(90));
+            var matrix = _matrixStorage.Get<int>(id).Handling(new MatrixRotation<int>());
 
             return RedirectToAction("Index", new { id });
         }
@@ -54,19 +54,19 @@ namespace Matrix.Web.Controllers
         [HttpPost]
         public ActionResult Import(HttpPostedFileBase file)
         {
-            var matrix = _matrixSerializer.Deserialize(file.InputStream, file.ContentType);
+            var matrix = _matrixSerializer.Deserialize<int>(file.InputStream, file.ContentType);
 
-            Guid id = _matrixStorage.Put(matrix);
+            Guid id = _matrixStorage.Put<int>(matrix);
 
             return RedirectToAction("Index", new { id });
         }
 
         [HttpPost]
-        public ActionResult Export(Guid id, string contentType)
+        public ActionResult Export(Guid id, string contentType = "text/csv")
         {
-            var matrix = _matrixStorage.Get(id);
+            var matrix = _matrixStorage.Get<int>(id);
 
-            return File(_matrixSerializer.Serialize(matrix, contentType), contentType);
+            return File(_matrixSerializer.Serialize<int>(matrix, contentType), contentType);
         }
     }
 }

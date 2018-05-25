@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Matrix.UnitTests.Handlers
 {
     [TestClass]
-    public class HandlingTests
+    public class TestForHandlers
     {
         [TestMethod]
         public void MatrixRandomizer()
@@ -30,7 +30,7 @@ namespace Matrix.UnitTests.Handlers
             var matrix = Matrix
                 .Create<int>(10)
                 .Handling(new MatrixRandomizer<int>(r => random[index++]))
-                .Handling(new MatrixRotation<int>(90));
+                .Handling(new MatrixRotation<int>());
 
             Assert.AreEqual(random.Sum(), matrix.Cast<int>().Sum());
         }

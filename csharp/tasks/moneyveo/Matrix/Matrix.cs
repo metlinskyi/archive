@@ -1,6 +1,5 @@
 ﻿using Matrix.Handlers;
 using System;
-using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -18,27 +17,27 @@ namespace Matrix
 
         public abstract IEnumerator GetEnumerator();
 
-        public static Matrix Create<T>(uint size)
+        public static Matrix<T> Create<T>(uint size)
         {
             return new Matrix<T>(size, size);
+        }
+
+        public static Matrix<T> Create<T>(int size)
+        {
+            return Create<T>((uint)size);
         }
     }
 
     public class Matrix<T> : Matrix, IEnumerable<T>
     {
-        private T[,] _matrix;
+        private readonly T[,] _matrix;
 
-        private uint _centerX;
-
-        private uint _centerY;
-
-        public Matrix(uint width, uint height)
+        internal Matrix(uint width, uint height)
         {
             Width = width;
             Height = height;
 
-            _centerX = Width >> 1;
-            _centerY = Height >> 1;
+            _matrix = new T[Width, Height];
         }
 
         public T this[uint x, uint y]
@@ -53,19 +52,13 @@ namespace Matrix
             {
                 Validation(x, y);
 
-                if (_matrix == null)
-                    _matrix = new T[Width, Height];
-
                 _matrix[x, y] = value;
             }
         }
 
         public override Type Type => typeof(T);
 
-        public override Matrix Handling(IMatrixHandler handler)
-        {
-            return handler.For(this);
-        }
+        public override Matrix Handling(IMatrixHandler handler) => handler.For(this);
 
         #region IEnumerable<T>
 
@@ -96,10 +89,10 @@ namespace Matrix
         private void Validation(uint x, uint y)
         {
             if (x >= Width)
-                throw new System.IndexOutOfRangeException("X");
+                throw new IndexOutOfRangeException("X");
 
             if (y >= Height)
-                throw new System.IndexOutOfRangeException("Y");
+                throw new IndexOutOfRangeException("Y");
         }
     }
 }

@@ -4,8 +4,8 @@ namespace Matrix.Services
 {
     public interface IMatrixSerializer
     {
-        Stream Serialize(Matrix matrix, string contentType);
+        Stream Serialize<T>(Matrix<T> matrix, string contentType);
 
-        Matrix Deserialize(Stream stream, string contentType);
+        Matrix<T> Deserialize<T>(Stream stream, string contentType);
     }
 }

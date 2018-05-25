@@ -20,17 +20,15 @@ namespace Matrix.Web.Services
             _fileService = fileService;
         }
 
-        public Matrix Get(Guid key)
+        public Matrix<T> Get<T>(Guid key)
         {
             using (var stream = _fileService.Get(key))
-            {
-                return _matrixSerializer.Deserialize(stream, ContentType);
-            }
+                return _matrixSerializer.Deserialize<T>(stream, ContentType);
         }
 
-        public void Put(Guid key, Matrix matrix)
+        public void Put<T>(Guid key, Matrix<T> matrix)
         {
-            using (var stream = _matrixSerializer.Serialize(matrix, ContentType))
+            using (var stream = _matrixSerializer.Serialize<T>(matrix, ContentType))
             using (_fileService.Put(key, stream)) { };
         }
     }
