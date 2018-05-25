@@ -3,6 +3,7 @@ using Matrix.Web.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using System.IO;
+using System.Reflection;
 
 namespace Matrix.UnitTests
 {
@@ -37,7 +38,15 @@ namespace Matrix.UnitTests
         [TestMethod]
         public void MatrixDeserialize()
         {
-            new MatrixSerializer().Deserialize<int>(null, contentType);
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream($"Matrix.UnitTests.Matrix.csv"))
+            {
+                Assert.IsNotNull(stream, "Matrix source is null");
+
+                var matrix = new MatrixSerializer().Deserialize<int>(stream, contentType);
+
+                Assert.IsNotNull(matrix);
+                Assert.AreEqual(43, matrix.Cast<int>().Sum());
+            }
         }
     }
 }

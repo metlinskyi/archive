@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <EmbeddedResource Include="Matrix.csv" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

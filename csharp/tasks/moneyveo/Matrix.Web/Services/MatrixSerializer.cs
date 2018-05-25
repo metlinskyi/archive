@@ -17,25 +17,27 @@ namespace Matrix.Web.Services
             if (string.Compare(contentType, ContentType, true) != 0)
                 throw new NotSupportedException(contentType);
 
-            var csv = new CsvReader(new StreamReader(stream));
-
-            var matrix = Matrix.Create<T>(csv.Context.ColumnCount);
-
-            uint x = 0;
-            uint y = 0;
-
-            do
+            using (var csv = new CsvReader(new StreamReader(stream)))
             {
-                while (csv.TryGetField<T>((int)x++, out T val))
+                csv.Configuration.IgnoreBlankLines = false;
+                csv.Read();
+
+                var matrix = Matrix.Create<T>(csv.Context.Record.Length);
+
+                // rows
+                for (uint y = 0; y < matrix.Height; y++)
                 {
-                    matrix[x, y] = val;
+                    // columns
+                    for (uint x = 0; x < matrix.Width; x++)
+                    {
+                        matrix[x, y] = csv.TryGetField<T>((int)x, out T val) ? val : default(T);
+                    }
+
+                    csv.Read();
                 }
 
-                x = 0;
-
-            } while (csv.Read() && y++ < matrix.Height);
-
-            return null;
+                return matrix;
+            }
         }
 
         public Stream Serialize<T>(Matrix<T> matrix, string contentType)
@@ -43,23 +45,25 @@ namespace Matrix.Web.Services
             if (string.Compare(contentType, ContentType, true) != 0)
                 throw new NotSupportedException(contentType);
 
-            MemoryStream memoryStream = new MemoryStream();
+            var output = new StreamWriter(new MemoryStream());
 
-            var csv = new CsvWriter(new StreamWriter(memoryStream));
-
-            // rows
-            for (uint y = 0; y < matrix.Height; y++)
+            using (var csv = new CsvWriter(output, true))
             {
-                // columns
-                for (uint x = 0; x < matrix.Width; x++)
+                // rows
+                for (uint y = 0; y < matrix.Height; y++)
                 {
-                    csv.WriteField<T>(matrix[x, y]);
-                }
+                    // columns
+                    for (uint x = 0; x < matrix.Width; x++)
+                    {
+                        csv.WriteField<T>(matrix[x, y]);
+                    }
 
-                csv.NextRecord();
+                    csv.NextRecord();
+                    output.Flush();
+                }
             }
 
-            return memoryStream;
+            return output.BaseStream;
         }
 
     }
