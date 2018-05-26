@@ -1,0 +1,5 @@
+﻿@using (Html.BeginForm("Export", "Matrix", new { id = ViewBag.MatrixKey }))
+{
+    <button type="submit" class="btn btn-link">Export</button>
+    <input type="hidden" name="contentType" value="text/csv" />
+}

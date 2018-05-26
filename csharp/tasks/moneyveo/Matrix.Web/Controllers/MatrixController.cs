@@ -1,7 +1,7 @@
 ﻿using Matrix.Handlers;
 using Matrix.Services;
+using Matrix.Web.Helpers;
 using Matrix.Web.Models;
-using Microsoft.VisualBasic.Devices;
 using System;
 using System.Web;
 using System.Web.Mvc;
@@ -31,6 +31,8 @@ namespace Matrix.Web.Controllers
 
             var matrix = _matrixStorage.Get<int>(id.Value);
 
+            ViewBag.MatrixKey = id.Value;
+
             return View((MatrixModel)matrix);
         }
 
@@ -40,7 +42,7 @@ namespace Matrix.Web.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            var matrix = Matrix.Create<int>(GetMatrixSize).Handling(new MatrixRandomizer<int>(r => r.Next()));
+            var matrix = Matrix.Create<int>(GetMatrixSize).Handling(new MatrixRandomizer<int>(x => x.Next()));
 
             Guid id = _matrixStorage.Put<int>(matrix);
 
@@ -62,9 +64,9 @@ namespace Matrix.Web.Controllers
         /// Загрузить матрицу из файла .csv;
         /// </summary>
         [HttpPost]
-        public ActionResult Import(HttpPostedFileBase file)
+        public ActionResult Import(HttpPostedFileBase file, string contentType)
         {
-            var matrix = _matrixSerializer.Deserialize<int>(file.InputStream, file.ContentType);
+            var matrix = _matrixSerializer.Deserialize<int>(file.InputStream, contentType);
 
             Guid id = _matrixStorage.Put<int>(matrix);
 
@@ -75,11 +77,13 @@ namespace Matrix.Web.Controllers
         /// Экспортировать матрицу в файл .csv;
         /// </summary>
         [HttpPost]
-        public ActionResult Export(Guid id, string contentType = "text/csv")
+        public ActionResult Export(Guid id, string contentType)
         {
             var matrix = _matrixStorage.Get<int>(id);
 
-            return File(_matrixSerializer.Serialize<int>(matrix, contentType), contentType);
+            var filename = FileHelper.GetFileName(id, contentType);
+
+            return File(_matrixSerializer.Serialize<int>(matrix, contentType), contentType, filename);
         }
 
         private static int GetMatrixSize
@@ -88,13 +92,16 @@ namespace Matrix.Web.Controllers
             {
                 int max;
 
+#if DEBUG
+                max = 100;
+#else
                 unchecked
                 {
                     max = (int)((GC.GetTotalMemory(true) / sizeof(int)) >> 8);
                 }
 
                 max = max == -1 ? int.MaxValue : max;
-
+#endif
                 return max;
             }
         }

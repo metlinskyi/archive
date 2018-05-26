@@ -59,7 +59,6 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -159,8 +158,8 @@
     </Compile>
     <Compile Include="Models\MatrixModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Services\IFileService.cs" />
-    <Compile Include="Services\IMatrixNavigation.cs" />
     <Compile Include="Services\FileService.cs" />
     <Compile Include="Services\MatrixSerializer.cs" />
     <Compile Include="Services\MatrixStorage.cs" />
@@ -201,6 +200,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Matrix\Index.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Matrix\Export.cshtml" />
+    <Content Include="Views\Matrix\Import.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

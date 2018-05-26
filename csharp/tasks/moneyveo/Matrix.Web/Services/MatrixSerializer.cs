@@ -63,6 +63,8 @@ namespace Matrix.Web.Services
                 }
             }
 
+            output.BaseStream.Seek(0, SeekOrigin.Begin);
+
             return output.BaseStream;
         }
 

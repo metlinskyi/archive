@@ -19,8 +19,13 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Import", "Index", "Matrix")</li>
-                <li>@Html.ActionLink("Create", "Create", "Matrix")</li>
+                <li>@Html.Partial("~/Views/Matrix/Import.cshtml")</li>
+                <li>@Html.ActionLink("Create", "Create", "Matrix", new { }, new { @class = "btn btn-link" })</li>
+                @if (ViewBag.MatrixKey != null)
+                {
+                <li>@Html.ActionLink("Rotate", "Rotate", "Matrix", new { id = ViewBag.MatrixKey }, new { @class = "btn btn-link" })</li>
+                <li>@Html.Partial("~/Views/Matrix/Export.cshtml")</li>
+                }
             </ul>
         </div>
     </div>

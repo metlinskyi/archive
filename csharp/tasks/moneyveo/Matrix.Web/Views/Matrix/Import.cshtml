@@ -1,0 +1,8 @@
+﻿@using (Html.BeginForm("Import", "Matrix", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <label for="MatrixFile" class="btn btn-link">
+        Export
+        <input id="MatrixFile" name="file" type="file" class="hidden" onchange="form.submit()" accept=".csv,text/csv" />
+        <input type="hidden" name="contentType" value="text/csv" />
+    </label>
+}
