@@ -8,22 +8,24 @@
             </tr>
         </thead>
         <tbody>
-        @for (uint y = 0; y < Model.Height; y++)
-        {
-            <tr>
-                @for (uint x = 0; x < Model.Width; x++)
-                {
-                    <td>@Model.Get(x, y)</td>
-                }
-            </tr>
-        }
+            @for (uint y = 0; y < Model.Height; y++)
+            {
+                <tr>
+                    @for (uint x = 0; x < Model.Width; x++)
+                    {
+                        <td>@Model.Get(x, y)</td>
+                    }
+                </tr>
+            }
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="@Model.Width">
-                    Size: @Model.Width x @Model.Height
-                </td>
+                <td colspan="@Model.Width"></td>
             </tr>
         </tfoot>
     </table>
+    <div class="matrix-info">
+        <div><label>type</label>@Model.Type.Name</div>
+        <div><label>size</label>@Model.Width x @Model.Height</div>
+    </div>
 </div>
