@@ -34,10 +34,10 @@ namespace Matrix
 
         internal Matrix(uint width, uint height)
         {
+            _matrix = new T[width, height];
+
             Width = width;
             Height = height;
-
-            _matrix = new T[Width, Height];
         }
 
         public T this[uint x, uint y]
@@ -64,13 +64,7 @@ namespace Matrix
 
         public override IEnumerator GetEnumerator()
         {
-            for (uint x = 0; x < Width; x++)
-            {
-                for (uint y = 0; y < Height; y++)
-                {
-                    yield return _matrix[x, y];
-                }
-            }
+            return this as IEnumerator<T>;
         }
 
         IEnumerator<T> IEnumerable<T>.GetEnumerator()

@@ -25,14 +25,11 @@ namespace Matrix.Web.Services
             if (fileInfo.Exists)
                 fileInfo.Delete();
 
-            byte[] buffer = new byte[2048];
-            int bytesRead;
-
             using (Stream file = fileInfo.OpenWrite())
-                while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) > 0)
-                {
-                    file.Write(buffer, 0, bytesRead);
-                }
+            {
+                stream.Seek(0, SeekOrigin.Begin);
+                stream.CopyTo(file);
+            }
 
             return stream;
         }
