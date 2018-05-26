@@ -1,6 +1,29 @@
-﻿@{
-    ViewBag.Title = "THE MATRIX";
-}
+﻿@{ ViewBag.Title = "THE MATRIX"; }
+@model Matrix.Matrix
 <div class="row">
-
+    <table class="matrix">
+        <thead>
+            <tr>
+                <td colspan="@Model.Width"></td>
+            </tr>
+        </thead>
+        <tbody>
+        @for (uint y = 0; y < Model.Height; y++)
+        {
+            <tr>
+                @for (uint x = 0; x < Model.Width; x++)
+                {
+                    <td>@Model.Get(x, y)</td>
+                }
+            </tr>
+        }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="@Model.Width">
+                    Size: @Model.Width x @Model.Height
+                </td>
+            </tr>
+        </tfoot>
+    </table>
 </div>

@@ -13,6 +13,8 @@ namespace Matrix
 
         public abstract Type Type { get; }
 
+        public abstract object Get(uint x, uint y);
+
         public abstract Matrix Handling(IMatrixHandler handler);
 
         public abstract IEnumerator GetEnumerator();
@@ -58,14 +60,13 @@ namespace Matrix
 
         public override Type Type => typeof(T);
 
+        public override object Get(uint x, uint y) => this[x, y];
+
         public override Matrix Handling(IMatrixHandler handler) => handler.For(this);
 
         #region IEnumerable<T>
 
-        public override IEnumerator GetEnumerator()
-        {
-            return this as IEnumerator<T>;
-        }
+        public override IEnumerator GetEnumerator() => this as IEnumerator<T>;
 
         IEnumerator<T> IEnumerable<T>.GetEnumerator()
         {
@@ -88,5 +89,6 @@ namespace Matrix
             if (y >= Height)
                 throw new IndexOutOfRangeException("Y");
         }
+
     }
 }

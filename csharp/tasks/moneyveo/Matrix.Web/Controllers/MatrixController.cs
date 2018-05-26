@@ -1,7 +1,6 @@
 ﻿using Matrix.Handlers;
 using Matrix.Services;
 using Matrix.Web.Helpers;
-using Matrix.Web.Models;
 using System;
 using System.Web;
 using System.Web.Mvc;
@@ -33,7 +32,7 @@ namespace Matrix.Web.Controllers
 
             ViewBag.MatrixKey = id.Value;
 
-            return View((MatrixModel)matrix);
+            return View(matrix);
         }
 
         /// <summary>
@@ -42,7 +41,7 @@ namespace Matrix.Web.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            var matrix = Matrix.Create<int>(GetMatrixSize).Handling(new MatrixRandomizer<int>(x => x.Next()));
+            var matrix = Matrix.Create<int>(GetMatrixSize).Handling(new MatrixRandomizer<int>(x => x.Next(10,99)));
 
             Guid id = _matrixStorage.Put<int>(matrix);
 
