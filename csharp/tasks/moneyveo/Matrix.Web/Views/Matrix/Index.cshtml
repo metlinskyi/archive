@@ -20,12 +20,13 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="@Model.Width"></td>
+                <td colspan="@Model.Width">
+                    <div class="matrix-info">
+                        <div><label>type</label>@Model.Type.Name</div>
+                        <div><label>size</label>@Model.Width x @Model.Height</div>
+                    </div>
+                </td>
             </tr>
         </tfoot>
     </table>
-    <div class="matrix-info">
-        <div><label>type</label>@Model.Type.Name</div>
-        <div><label>size</label>@Model.Width x @Model.Height</div>
-    </div>
 </div>
