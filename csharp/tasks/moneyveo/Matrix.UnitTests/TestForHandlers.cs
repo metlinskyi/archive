@@ -34,9 +34,9 @@ namespace Matrix.UnitTests.Handlers
 
             Assert.AreEqual(random.Sum(), matrix.Cast<int>().Sum());
             Assert.AreEqual(21, (int)matrix.Get(0,0));
-            Assert.AreEqual(1, (int)matrix.Get(0, 4));
+            Assert.AreEqual(1, (int)matrix.Get(4, 0));
             Assert.AreEqual(5, (int)matrix.Get(4, 4));
-            Assert.AreEqual(25, (int)matrix.Get(4, 0));
+            Assert.AreEqual(25, (int)matrix.Get(0, 4));
         }
     }
 }

@@ -7,6 +7,8 @@
         public MatrixRotation(bool clockwise = true)
         {
             _clockwise = clockwise;
+            if (_clockwise == false)
+                throw new System.NotImplementedException();
         }
 
         public Matrix For(Matrix matrix)
@@ -21,8 +23,9 @@
             uint edge = n - 1;
             uint index;
 
-            uint[,] indexes = new uint[4,2];
             T[] values = new T[4];
+
+            uint[,] indexes = new uint[values.Length, 2];
 
             int i, v;
 
@@ -53,8 +56,11 @@
                         values[i] = matrix[indexes[i, 0], indexes[i, 1]];
                     }
 
-                    for (v = values.Length - 1, i = 0; v >= 0; v--, i++)
+                    for (v= 0; v < values.Length; v++)
                     {
+                        i = v + 1;
+                        i = i >= values.Length || i < 0 ? 0 : i;
+
                         matrix[indexes[i, 0], indexes[i, 1]] = values[v];
                     }
                 }
