@@ -16,13 +16,48 @@
 
         private Matrix For(Matrix<T> matrix)
         {
-            T val;
-
             uint n = matrix.Width;
+            uint offset = n - 1;
+            uint edge = n - 1;
+            uint index;
 
-            for (uint x = 0, y = 0; x < n >> 1; x++, y++)
+            uint[,] indexes = new uint[4,2];
+            T[] values = new T[4];
+
+            int i, v;
+
+            // спуск по главной диагонали до центра
+            for (uint x = 0, y = 0; x < n >> 1; x++, y++, offset--, edge >>= 1)
             {
-                val = matrix[x, y];
+                // проход по грани 
+                for (index = 0; index < edge; index++)
+                {
+                    // расчет индексов
+
+                    indexes[0, 0] = x + index;
+                    indexes[0, 1] = y;
+
+                    indexes[1, 0] = offset;
+                    indexes[1, 1] = y + index;
+
+                    indexes[2, 0] = offset - index;
+                    indexes[2, 1] = offset;
+
+                    indexes[3, 0] = x;
+                    indexes[3, 1] = offset - index;
+
+                    // вращение 
+
+                    for (i = 0; i < values.Length; i++)
+                    {
+                        values[i] = matrix[indexes[i, 0], indexes[i, 1]];
+                    }
+
+                    for (v = values.Length - 1, i = 0; v >= 0; v--, i++)
+                    {
+                        matrix[indexes[i, 0], indexes[i, 1]] = values[v];
+                    }
+                }
             }
 
             return matrix;

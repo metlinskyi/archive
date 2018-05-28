@@ -41,7 +41,9 @@ namespace Matrix.Web.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            var matrix = Matrix.Create<int>(GetMatrixSize).Handling(new MatrixRandomizer<int>(x => x.Next(10,99)));
+            var matrix = Matrix.Create<int>(GetMatrixSize);
+
+            matrix.Handling(new MatrixRandomizer<int>(x => x.Next(10,99)));
 
             Guid id = _matrixStorage.Put<int>(matrix);
 
@@ -54,7 +56,11 @@ namespace Matrix.Web.Controllers
         [HttpGet]
         public ActionResult Rotate(Guid id)
         {
-            var matrix = _matrixStorage.Get<int>(id).Handling(new MatrixRotation<int>());
+            var matrix = _matrixStorage.Get<int>(id);
+
+            matrix.Handling(new MatrixRotation<int>());
+
+            _matrixStorage.Put<int>(id, matrix);
 
             return RedirectToAction("Index", new { id });
         }

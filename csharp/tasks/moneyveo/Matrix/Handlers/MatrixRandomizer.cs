@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace Matrix.Handlers
 {
@@ -7,7 +6,7 @@ namespace Matrix.Handlers
     {
         private readonly Func<Random, T> _func;
 
-        public MatrixRandomizer(Func<Random,T> func)
+        public MatrixRandomizer(Func<Random, T> func)
         {
             _func = func;
         }
@@ -21,9 +20,9 @@ namespace Matrix.Handlers
         {
             var rnd = new Random();
 
-            for (uint x = 0; x < matrix.Width; x++)
+            for (uint y = 0; y < matrix.Height; y++)
             {
-                for (uint y = 0; y < matrix.Height; y++)
+                for (uint x = 0; x < matrix.Width; x++)
                 {
                     matrix[x, y] = _func(rnd);
                 }

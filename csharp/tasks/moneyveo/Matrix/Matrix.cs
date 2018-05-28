@@ -70,9 +70,9 @@ namespace Matrix
 
         IEnumerator<T> IEnumerable<T>.GetEnumerator()
         {
-            for (uint x = 0; x < Width; x++)
+            for (uint y = 0; y < Height; y++)
             {
-                for (uint y = 0; y < Height; y++)
+                for (uint x = 0; x < Width; x++)
                 {
                     yield return _matrix[x, y];
                 }
