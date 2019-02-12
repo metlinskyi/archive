@@ -1,4 +1,4 @@
-![favicon-ico] www.metlinskyi.com
+![favicon-ico] www.metlinskyi.com.ua
 =======
 
 <table border="0" style="border:none 0"><td width="70%" valign="top">
@@ -22,12 +22,12 @@ Also, I have experiences with other web technologies such as PHP, MySql, Yii, Wo
 
 <small>* - just for memories</small>
 
-</td><td><img src="https://github.com/interreto/www.metlinskyi.com/blob/master/me.png" alt="Typical software engineer" /></td>
+</td><td><img src="https://github.com/metlinskyi/www.metlinskyi.com/tree/master/me.png" alt="Typical software engineer" /></td>
 </table>
 
 
 &nbsp;
 ============
-&copy; [The best software engineer in the Universe!](http://metlinskyi.com/)
+&copy; [The best software engineer in the Universe!](http://www.metlinskyi.com.ua/)
 
 [favicon-ico]: https://raw.github.com/metlinskyi/www.metlinskyi.com/master/favicon.ico
